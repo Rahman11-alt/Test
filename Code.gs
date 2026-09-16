@@ -104,7 +104,7 @@ function setupDatabase() {
 function login_(body) {
   const props = PropertiesService.getScriptProperties();
   const username = props.getProperty('ADMIN_USERNAME') || 'admin';
-  const hash = props.getProperty('ADMIN_PASSWORD_HASH');
+  const hash = props.getProperty('ADMIN_PASSWORD'); || 'admin123';
   if (!hash) throw new Error('Administrator belum disiapkan. Jalankan setupAdmin() terlebih dahulu.');
   if (String(body.username || '') !== username || hash_(String(body.password || '')) !== hash) {
     writeLog_('Gagal Login', String(body.username || ''), 'GAGAL');
