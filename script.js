@@ -1,4 +1,4 @@
-const API_URL = "[ISI DI SINI]";
+const API_URL = "https://script.google.com/macros/s/AKfycbyC9IcJzn8ob3PqEltUHW-nvvFbQapiIxYVzfIzdLzXBH6EISZAHDSFe1loHrgPpuJrJg/exec"";
 let token = sessionStorage.getItem('admin_session') || '';
 let currentUser = sessionStorage.getItem('admin_user') || '';
 let students=[], teachers=[], classes=[], grades=[], attendance=[];
