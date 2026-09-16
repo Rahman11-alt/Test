@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 
 async function api(action,data={}) {
-  if(API_URL==='[ISI DI SINI]') throw new Error('API_URL belum diisi pada script.js.');
+  if(API_URL==='https://script.google.com/macros/s/AKfycbyC9IcJzn8ob3PqEltUHW-nvvFbQapiIxYVzfIzdLzXBH6EISZAHDSFe1loHrgPpuJrJg/exec"') throw new Error('API_URL belum diisi pada script.js.');
   showLoading(true);
   try {
     const r=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action,token,...data})});
