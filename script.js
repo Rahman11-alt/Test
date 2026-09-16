@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   $('menuBtn').addEventListener('click',()=> $('sidebar').classList.toggle('open'));
   document.querySelectorAll('.nav-item').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
   $('studentForm').addEventListener('submit',saveStudent);
-  if(token && API_URL !== '[ISI DI SINI]') startApp(); else showLogin();
+  if(token && API_URL !== 'https://script.google.com/macros/s/AKfycbyC9IcJzn8ob3PqEltUHW-nvvFbQapiIxYVzfIzdLzXBH6EISZAHDSFe1loHrgPpuJrJg/exec"') startApp(); else showLogin();
 });
 
 async function api(action,data={}) {
