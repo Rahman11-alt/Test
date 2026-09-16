@@ -73,16 +73,15 @@ function setupAdmin() {
   const props = PropertiesService.getScriptProperties();
   const username = 'admin';
   const password = 'admin123';
-  if (password === 'admin123') {
-    throw new Error('Edit fungsi setupAdmin(), isi password administrator pada bagian admin123, lalu jalankan sekali.');
-  }
+  
   props.setProperties({
     ADMIN_USERNAME: username,
     ADMIN_PASSWORD_HASH: hash_(password),
     ADMIN_NAME: 'Robby'
   }, true);
+  
   setupDatabase();
-  Logger.log('Administrator dan database awal berhasil disiapkan.');
+  Logger.log('Administrator dan database awal berhasil disiapkan dengan password admin123.');
 }
 
 function setupDatabase() {
@@ -104,8 +103,8 @@ function setupDatabase() {
 function login_(body) {
   const props = PropertiesService.getScriptProperties();
   const username = props.getProperty('ADMIN_USERNAME') || 'admin';
-  const hash = props.getProperty('ADMIN_PASSWORD'); || 'admin123';
-  if (!hash) throw new Error('Administrator belum disiapkan. Jalankan setupAdmin() terlebih dahulu.');
+  const hash = props.getProperty('ADMIN_PASSWORD_HASH') || hash_('admin123');
+
   if (String(body.username || '') !== username || hash_(String(body.password || '')) !== hash) {
     writeLog_('Gagal Login', String(body.username || ''), 'GAGAL');
     throw new Error('Username atau password salah.');
