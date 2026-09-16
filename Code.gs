@@ -72,8 +72,8 @@ function setup_() {
 function setupAdmin() {
   const props = PropertiesService.getScriptProperties();
   const username = 'admin';
-  const password = '[ISI DI SINI]';
-  if (password === '[ISI DI SINI]') {
+  const password = 'admin123';
+  if (password === 'admin123') {
     throw new Error('Edit fungsi setupAdmin(), isi password administrator pada bagian [ISI DI SINI], lalu jalankan sekali.');
   }
   props.setProperties({
